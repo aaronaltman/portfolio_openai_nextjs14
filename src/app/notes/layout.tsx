@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./_components/header";
+import NotesContainer from "./_components/notes-container";
 
 export default function NotesPageLayout({
   children,
@@ -7,9 +8,11 @@ export default function NotesPageLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main>
-      <Header />
-      {children}
-    </main>
+    <NotesContainer>
+      <main>
+        <Header />
+        {children}
+      </main>
+    </NotesContainer>
   );
 }
