@@ -4,7 +4,13 @@ import React from "react";
 export default function NotesLogo() {
   return (
     <>
-      <Image width={100} height={50} alt="home" src="/logo.png" className="" />
+      <Image
+        width={300}
+        height={100}
+        alt="home"
+        src="/logo-horizontal.png"
+        className=""
+      />
     </>
   );
 }

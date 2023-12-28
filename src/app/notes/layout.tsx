@@ -9,10 +9,8 @@ export default function NotesPageLayout({
 }) {
   return (
     <NotesContainer>
-      <main>
-        <Header />
-        {children}
-      </main>
+      <Header />
+      {children}
     </NotesContainer>
   );
 }
