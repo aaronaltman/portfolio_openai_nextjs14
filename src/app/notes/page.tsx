@@ -1,6 +1,4 @@
-import { Button } from "@/components/ui/button";
 import { currentUser } from "@clerk/nextjs";
-import { getAuth } from "@clerk/nextjs/server";
 import { MyPosts } from "@/constants/posts";
 import NoteForm from "./_components/note-form";
 

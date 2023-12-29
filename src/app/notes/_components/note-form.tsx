@@ -1,7 +1,8 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { auth, currentUser } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs";
+import { getAuth } from "@clerk/nextjs/server";
 import { useState, ChangeEvent, FormEvent, use, useEffect } from "react"; // Import ChangeEvent and FormEvent types
 
 export default function NoteForm() {
@@ -28,8 +29,7 @@ export default function NoteForm() {
     // Use FormEvent
     e.preventDefault();
 
-    const getAuthor = await currentUser();
-    const authorId = getAuthor?.id;
+    const authorId = auth().userId;
 
     const noteData = {
       title,
