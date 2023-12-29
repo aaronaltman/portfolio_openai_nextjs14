@@ -14,9 +14,7 @@ export async function POST(req: Request) {
 
     const { title, content } = parseResult.data;
 
-    // Resolving auth and currentUser
-    const user = await auth();
-    const userId = user?.userId; // Ensure this matches the user ID variable name used in your database schema.
+    const { userId } = await auth(); // Ensure this matches the user ID variable name used in your database schema.
 
     if (!userId) {
       return new Response(JSON.stringify({ error: "Unauthorized" }), {
