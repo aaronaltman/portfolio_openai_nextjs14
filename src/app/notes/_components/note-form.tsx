@@ -1,13 +1,15 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { auth } from "@clerk/nextjs";
-import { useState, ChangeEvent, FormEvent, use, useEffect } from "react"; // Import ChangeEvent and FormEvent types
+import { useState, ChangeEvent, FormEvent, use, useEffect } from "react";
+import NoteAndAuth from "@/components/global/note-and-auth"; // Import ChangeEvent and FormEvent types
+
+const isAuth = NoteAndAuth();
+const userId = isAuth;
 
 export default function NoteForm() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const { userId }: { userId: string | null } = auth();
 
   const authorId = userId;
 
