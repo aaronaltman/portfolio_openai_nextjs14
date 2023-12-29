@@ -7,10 +7,5 @@ export default function NotesPageLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <NotesContainer>
-      <Header />
-      {children}
-    </NotesContainer>
-  );
+  return <NotesContainer>{children}</NotesContainer>;
 }

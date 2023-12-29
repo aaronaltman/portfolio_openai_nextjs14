@@ -1,10 +1,7 @@
 import { auth } from "@clerk/nextjs";
 import prisma from "@/lib/db/prisma";
 
-export async function getServerSideProps(context: any) {
-  // Extract the req object from the context
-  const { req } = context;
-
+export async function getRipped() {
   // Await the resolution of the auth function
   const userId = await auth();
 
@@ -15,9 +12,7 @@ export async function getServerSideProps(context: any) {
   }
 
   const allNotes = await prisma.note.findMany({
-    where: {
-      userId,
-    },
+    where: {},
   });
 
   return {
